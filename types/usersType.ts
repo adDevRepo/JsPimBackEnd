@@ -1,7 +1,7 @@
 import { Client } from './clientsType';
 
 export interface User {
-  id: string;
+  id: number;
   email: string;
   password: string;
   firstName: string;
