@@ -1,98 +1,242 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# Backend PIM
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## Présentation
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+Ce projet est le backend d'une application PIM (Product Information Management).
 
-## Description
+Il permet de gérer les données produits, les catégories, les canaux d'export ainsi que l'authentification des utilisateurs.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+L'API a été développée avec NestJS, TypeScript, Prisma et PostgreSQL.
 
-## Project setup
+Le projet utilise Docker afin de faciliter le développement et le lancement de l'environnement complet.
 
-```bash
-$ npm install
-```
+---
 
-## Compile and run the project
+## Fonctionnalités
 
-```bash
-# development
-$ npm run start
+- authentification des utilisateurs
+- inscription et connexion
+- gestion des produits
+- gestion des catégories
+- gestion des canaux
+- association de produits à un canal
+- configuration des colonnes d'export
+- génération d'exports CSV
+- API REST sécurisée
 
-# watch mode
-$ npm run start:dev
+---
 
-# production mode
-$ npm run start:prod
-```
+## Technologies utilisées
 
-## Run tests
+- NestJS
+- TypeScript
+- Prisma ORM
+- PostgreSQL
+- Docker
+- Docker Compose
+
+---
+
+## Installation
+
+1. Cloner le projet
+
+2. Installer les dépendances :
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+npm install
 ```
 
-## Deployment
-
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+3. Créer un fichier `.env` à partir de l'exemple :
 
 ```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
+cp .env.example .env
 ```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+---
 
-## Resources
+## Variables d'environnement
 
-Check out a few resources that may come in handy when working with NestJS:
+Dans `.env` :
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+```env
+DATABASE_URL="postgresql://nest_user:nest_password@postgres:5432/nest_db?schema=public"
+```
 
-## Support
+---
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+## Lancer le projet
 
-## Stay in touch
+## Avec Docker (recommandé)
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+Démarrer l'API et PostgreSQL :
 
-## License
+```bash
+docker compose up --build
+```
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+L'API démarre par défaut sur :
+
+```txt
+http://localhost:3000
+```
+
+PostgreSQL est accessible sur :
+
+```txt
+localhost:5432
+```
+
+---
+
+## Générer Prisma
+
+Dans un autre terminal :
+
+```bash
+docker exec -it nest_api sh
+```
+
+Puis :
+
+```bash
+npx prisma generate
+```
+
+---
+
+## Lancer les migrations
+
+Toujours dans le conteneur :
+
+```bash
+npx prisma migrate dev --name init
+```
+
+---
+
+## Prisma Studio
+
+Prisma Studio permet de visualiser les données de la base :
+
+```bash
+npx prisma studio
+```
+
+---
+
+## Lancer le backend sans Docker
+
+```bash
+npm run start:dev
+```
+
+---
+
+## Scripts disponibles
+
+```bash
+npm run start
+```
+
+Lance l'API
+
+```bash
+npm run start:dev
+```
+
+Lance l'API en mode développement
+
+```bash
+npm run start:prod
+```
+
+Lance l'API en production
+
+```bash
+npm run test
+```
+
+Lance les tests unitaires
+
+```bash
+npm run test:e2e
+```
+
+Lance les tests end-to-end
+
+```bash
+npm run test:cov
+```
+
+Affiche la couverture des tests
+
+---
+
+## Structure du projet
+
+```txt
+src/
+  auth/         Authentification et sécurité
+  products/     Gestion des produits
+  categories/   Gestion des catégories
+  channels/     Gestion des canaux
+  prisma/       Service Prisma
+  common/       Éléments partagés
+```
+
+---
+
+## Frontend
+
+Le frontend React communique avec cette API via :
+
+```txt
+http://localhost:3000
+```
+
+Le frontend utilise généralement un proxy `/api` configuré avec Vite.
+
+---
+
+## Architecture du projet
+
+```txt
+Frontend React
+       ↓
+Backend NestJS API
+       ↓
+Prisma ORM
+       ↓
+PostgreSQL
+```
+
+---
+
+## Déploiement
+
+Pour déployer le backend :
+
+- configurer les variables d'environnement
+- utiliser une base PostgreSQL de production
+- désactiver les configurations de développement
+- configurer les CORS pour le frontend
+- construire l'image Docker
+
+Lancement de production :
+
+```bash
+docker compose up -d --build
+```
+
+---
+
+## Objectif du projet
+
+L'objectif du projet est de proposer une API permettant de centraliser des informations produits et de générer des exports adaptés à différents canaux de diffusion.
+
+---
+
+## Auteur
+
+Projet réalisé dans le cadre d'un stage
