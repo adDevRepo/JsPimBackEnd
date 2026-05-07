@@ -1,4 +1,6 @@
-# Backend PIM
+# Backend PIM  
+<p align="center"><img src="./assets/pim-nsk-logo.svg" width="100" alt="Logo PIM" />
+</p>
 
 ## Présentation
 
